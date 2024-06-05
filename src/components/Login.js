@@ -16,11 +16,13 @@ const Login = () => {
     setErrorMessage('');
     try {
       const res = await axios.post('http://localhost:3001/api/user/login', { username, password });
+      console.log('Login response:', res.data); // Debugging line
       
       dispatch(setCredentials({ user: username, token: res.data.token }));
-      localStorage.setItem('token', res.data.token); 
-      localStorage.setItem('accessToken', res.data.accessToken); 
+      localStorage.setItem('accessToken', res.data.token); 
       localStorage.setItem('refreshToken', res.data.refreshToken); 
+      console.log('Access Token:', res.data.token); 
+      console.log('Refresh Token:', res.data.refreshToken); // Debugging line
 
       history.push('/dashboard'); 
     } catch (error) {
@@ -29,6 +31,7 @@ const Login = () => {
       } else {
         setErrorMessage('An unexpected error occurred.');
       }
+      console.error('Login error:', error); // Debugging line
     }
   };
 
