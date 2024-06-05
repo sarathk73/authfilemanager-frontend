@@ -1,8 +1,10 @@
+// src/axiosInterceptor.js
 import axios from 'axios';
 
 const setupAxiosInterceptors = (history) => {
   axios.interceptors.request.use(config => {
     const token = localStorage.getItem('accessToken');
+    console.log('Setting token in request:', token); // Debugging line
     if (token) {
       config.headers['Authorization'] = `Bearer ${token}`;
     }
@@ -18,10 +20,11 @@ const setupAxiosInterceptors = (history) => {
         try {
           console.log('Access token expired. Attempting to refresh token...');
           const refreshToken = localStorage.getItem('refreshToken');
-          const response = await axios.post('http://localhost:3001/api/auth/refresh', { refreshToken });
-          const { accessToken } = response.data;
-          localStorage.setItem('accessToken', accessToken);
-          axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+          const response = await axios.post('http://localhost:3001/api/user/refresh', { refreshToken });
+          const { token } = response.data;
+          console.log('New access token:', token); // Debugging line
+          localStorage.setItem('accessToken', token);
+          axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
           console.log('Token refreshed. Retrying original request...');
           return axios(originalRequest);
         } catch (refreshError) {
