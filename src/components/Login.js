@@ -19,6 +19,9 @@ const Login = () => {
       
       dispatch(setCredentials({ user: username, token: res.data.token }));
       localStorage.setItem('token', res.data.token); 
+      localStorage.setItem('accessToken', res.data.accessToken); 
+      localStorage.setItem('refreshToken', res.data.refreshToken); 
+
       history.push('/dashboard'); 
     } catch (error) {
       if (error.response && error.response.data) {
