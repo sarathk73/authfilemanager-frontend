@@ -35,6 +35,21 @@ const Dashboard = () => {
             Get All Tasks
           </button>
         </Link>
+        <Link to="/tasks/update">
+          <button className="bg-purple-500 text-white px-4 py-2 rounded w-full">
+            Update Task
+          </button>
+        </Link>
+        <Link to="/tasks/delete">
+          <button className="bg-red-500 text-white px-4 py-2 rounded w-full">
+            Delete Task
+          </button>
+        </Link>
+        <Link to="/tasks/get">
+          <button className="bg-yellow-500 text-white px-4 py-2 rounded w-full">
+            Get Task by ID
+          </button>
+        </Link>
         <Link to="/upload">
           <button className="bg-green-500 text-white px-4 py-2 rounded w-full">
             Upload File
