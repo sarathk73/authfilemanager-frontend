@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import loginImg from '../assets/register.jpg'; 
-
+import registerImg from '../assets/register.jpg'; 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,7 +16,7 @@ const Register = () => {
     try {
       const res = await axios.post('http://localhost:3001/api/user/register', { username, password });
       setSuccessMessage('Registration successful! Redirecting to login...');
-      setTimeout(() => history.push('/login'), 2000);
+      setTimeout(() => history.push('/login', { username, password }), 2000);
     } catch (error) {
       if (error.response && error.response.data) {
         setErrorMessage(error.response.data);
@@ -64,7 +63,7 @@ const Register = () => {
           {successMessage && <div className="mt-4 text-green-500">{successMessage}</div>}
           {errorMessage && <div className="mt-4 text-red-500">{errorMessage}</div>}
         </div>
-        <img src={loginImg} alt="Login" className="w-[430px] hidden md:block md:rounded-r-2xl" />
+        <img src={registerImg} alt="Register" className="w-[430px] hidden md:block md:rounded-r-2xl" />
       </div>
     </div>
   );
