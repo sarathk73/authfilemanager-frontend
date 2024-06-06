@@ -1,4 +1,3 @@
-// src/components/GetAllTasks.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -25,7 +24,9 @@ const GetAllTasks = () => {
         {tasks.map(task => (
           <li key={task._id} className="border p-4 mb-2">
             <h3 className="text-xl font-bold">{task.title}</h3>
-            <p>{task.description}</p>
+            <p><strong>ID:</strong> {task._id}</p> 
+            <p><strong>Description:</strong> {task.description}</p>
+            <p><strong>Status:</strong> {task.status}</p>
           </li>
         ))}
       </ul>
