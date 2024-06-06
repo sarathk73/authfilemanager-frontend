@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setCredentials } from '../store/authSlice';
-import loginImg from '../assets/login.png'; // Ensure you have this image in the specified path
+import loginImg from '../assets/login.png'; 
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -11,15 +11,19 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const history = useHistory();
+  const location = useLocation();
   const dispatch = useDispatch();
 
   useEffect(() => {
     const rememberMeValue = localStorage.getItem('rememberMe') === 'true';
     setRememberMe(rememberMeValue);
-    if (rememberMeValue) {
+    if (location.state && location.state.username && location.state.password) {
+      setUsername(location.state.username);
+      setPassword(location.state.password);
+    } else if (rememberMeValue) {
       setUsername(localStorage.getItem('username') || '');
     }
-  }, []);
+  }, [location.state]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,13 +46,19 @@ const Login = () => {
 
       history.push('/dashboard'); 
     } catch (error) {
-      if (error.response) {
-        setErrorMessage(error.response.data.message || 'An unexpected error occurred.');
-        console.error('Login error:', error.response.data); // Detailed error logging
+      if (error.response && error.response.data) {
+        
+        if (typeof error.response.data === 'object' && error.response.data.message) {
+          setErrorMessage(error.response.data.message);
+        } else if (typeof error.response.data === 'string') {
+          setErrorMessage(error.response.data);
+        } else {
+          setErrorMessage('An unexpected error occurred.');
+        }
       } else {
         setErrorMessage('An unexpected error occurred.');
-        console.error('Login error:', error.message); // Detailed error logging
       }
+      console.error('Login error:', error.response ? error.response.data : error.message); // Detailed error logging
     }
   };
 
