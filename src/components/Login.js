@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setCredentials } from '../store/authSlice';
@@ -98,7 +99,7 @@ const Login = () => {
                 onChange={(e) => setRememberMe(e.target.checked)}
               /> Remember Me
             </p>
-            <p>Forgot Password</p>
+            <Link to="/register" className="text-teal-300 hover:text-teal-500">Register here</Link>
           </div>
           <button className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg'>
             SIGN IN
