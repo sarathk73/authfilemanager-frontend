@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# FileTask Portal
+
+FileTask Portal is a comprehensive front-end application built with React. It works in conjunction with the AuthCRUDFileManager API to provide a robust platform for managing tasks and files. Users can securely authenticate, perform CRUD operations on tasks, and manage file uploads and downloads in a user-friendly environment
+## Features
+
+- **Login & Registration**: Securely register and log in to access your tasks and files.
+- **Create, View, Update & Delete Tasks**: Full featured task management to organize your work.
+- **File Upload & Download**: Easily manage your files by uploading and downloading as needed.
+- **Protected Routes**: Ensures that only authenticated users can access certain areas of the application.
+- **Interactive UI**: Modern and interactive user interface for managing tasks and files.
+- **Responsive Design**: Works on various devices and screen sizes.
+
+## Folder Structure
+
+Here is a high-level overview of the frontend's directory structure:
+
+```
+/frontend
+|-- /src
+    |-- /assets
+        |-- images and other static resources
+    |-- /components
+        |-- CreateTask.js
+        |-- Dashboard.js
+        |-- DeleteTask.js
+        |-- FileDownload.js
+        |-- FileUpload.js
+        |-- GetAllTasks.js
+        |-- GetTaskById.js
+        |-- Login.js
+        |-- ProtectedRoute.js
+        |-- Register.js
+        |-- UpdateTask.js
+    |-- /store
+        |-- authSlice.js
+        |-- store.js
+    |-- axiosInterceptor.js
+    |-- App.js
+    |-- App.css
+    |-- index.js
+    |-- index.css
+    |-- setupTests.js
+    |-- reportWebVitals.js
+|-- .gitignore
+|-- package.json
+|-- README.md
+|-- tailwind.config.js
+```
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+To get started with the frontend on your local machine:
 
-In the project directory, you can run:
+1. Clone the repository:
 
-### `npm start`
+```bash
+git clone https://github.com/sarathk73/authfilemanager-frontend
+cd authfilemanager-frontend
+```
 
-Runs the app in the development mode.\
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the project:
+
+```bash
+npm start
+```
+
+This runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+Synopsis of the primary components and their use:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Register / Login** to create your own account.
+- Navigate to the **Dashboard** to manage tasks and files.
+- Use **CreateTask** to add new tasks.
+- **GetAllTasks** lists all tasks with options to update them via **UpdateTask** or delete via **DeleteTask**.
+- **FileUpload** allows easy uploading of files, while **FileDownload** handles downloading files from the server.
 
-### `npm run build`
+## Documentation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For further reference, detailed comments are provided within each component to explain the functionality and state management.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
 
-### `npm run eject`
+Distributed under the MIT License. See `LICENSE` for more information.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Support
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Reach out to the maintainer at one of the following places:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- LinkedIn at [your-linkedin](https://linkedin.com/in/sarathk73)
+- Twitter at [@yourtwitter](https://twitter.com/sarathk73)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Status
 
-## Learn More
+The project is actively developed and  do not open to feature suggestions and pull requests.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
