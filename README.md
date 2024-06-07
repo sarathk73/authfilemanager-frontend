@@ -2,7 +2,7 @@
 
 FileTask Portal is a comprehensive front-end application built with React. It works in conjunction with the AuthCRUDFileManager API to provide a robust platform for managing tasks and files. Users can securely authenticate, perform CRUD operations on tasks, and manage file uploads and downloads in a user-friendly environment
 
-![FileTask](/src/assets/f4.png)
+![FileTask](/src/assets/f4.jpg)
 ![FileTask](/src/assets/f1.png)
 ![FileTask](/src/assets/f2.png)
 ## Features
