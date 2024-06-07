@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import registerImg from '../assets/register.jpg'; 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -62,6 +63,12 @@ const Register = () => {
           </form>
           {successMessage && <div className="mt-4 text-green-500">{successMessage}</div>}
           {errorMessage && <div className="mt-4 text-red-500">{errorMessage}</div>}
+          <p className="mt-4 text-center">
+            Already registered? {''}
+            <Link to="/login" className="text-blue-600 hover:text-blue-800 transition duration-150">
+              Login here
+            </Link>
+          </p>
         </div>
         <img src={registerImg} alt="Register" className="w-[430px] hidden md:block md:rounded-r-2xl" />
       </div>
