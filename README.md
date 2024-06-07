@@ -1,7 +1,6 @@
 # FileTask Portal
 
-FileManager Frontend is a React-based UI that serves as the frontend for the AuthCRUDFileManager Node.js API. It provides a user-friendly interface for account management, task creation, and file uploads and downloads.
-
+FileTask Portal is a comprehensive front-end application built with React. It works in conjunction with the AuthCRUDFileManager API to provide a robust platform for managing tasks and files. Users can securely authenticate, perform CRUD operations on tasks, and manage file uploads and downloads in a user-friendly environment
 ## Features
 
 - **Login & Registration**: Securely register and log in to access your tasks and files.
