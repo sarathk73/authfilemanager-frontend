@@ -102,8 +102,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Reach out to the maintainer at one of the following places:
 
-- LinkedIn at [your-linkedin](https://linkedin.com/in/sarathk73)
-- Twitter at [@yourtwitter](https://twitter.com/sarathk73)
+- LinkedIn at [Sarath K](https://linkedin.com/in/sarathk73)
+- Twitter at [@sarathk73](https://twitter.com/sarathk73)
 
 ## Project Status
 
